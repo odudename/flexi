@@ -1,0 +1,10 @@
+/.vscode
+/.wordpress-org
+/.git
+/.github
+/block/node_modules
+/block/package-lock.json
+/block/readme.md
+.distignore
+.gitignore
+/assets

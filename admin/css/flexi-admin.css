@@ -1,0 +1,32 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+/* Dashboard */
+.about-wrap img.flexi-help-screenshot {
+  float: right;
+  margin: 10px;
+  width: inherit;
+}
+
+.flexi-badge-logo {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  background: url(../img/flexi_logo.png) no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+/* Setting message box */
+
+.flexi_card{
+position: relative;
+margin-top: 20px;
+padding: .7em 2em 1em;
+min-width: 255px;
+border: 1px solid #c3c4c7;
+box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+background: #fff;
+box-sizing: border-box;
+}

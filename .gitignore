@@ -1,0 +1,14 @@
+/.vscode/
+/.vs/
+block/node_modules
+block/package-lock.json
+block/.eslintrc.json
+block/.editorconfig
+block/.eslintignore
+public/partials/layout/detail/coin
+public/partials/layout/gallery/coin
+public/partials/layout/gallery/table
+
+## Uncomment line below if you prefer to
+## keep compiled files out of version control
+# dist/

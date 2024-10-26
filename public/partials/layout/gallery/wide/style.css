@@ -1,0 +1,101 @@
+/*!
+version=3.9
+url=https://github.com/gupta977/flexi/tree/master/public/partials/layout/gallery/wide
+*/
+
+
+.flexi_effect {
+  overflow: unset;
+}
+.flexi-gallery-wide {
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+
+.flexi-gallery-wide .flexi-gallery-wide_sub {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 3px;
+  text-align: left;
+  box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid #cfcfcf;
+  overflow: hidden;
+  background-color: #fff;
+  font: normal 13px sans-serif;
+  margin-bottom: var(--flexi_padding);
+}
+
+/* Article photo */
+
+.flexi-gallery-wide_img a img {
+  float: left;
+  width: var(--flexi_t_width);
+  height: var(--flexi_t_height);
+  display: block;
+  background-size: cover;
+}
+
+.flexi-gallery-wide_info {
+  float: left;
+  box-sizing: border-box;
+  min-height: var(--flexi_t_height);
+  width: 60%;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+}
+
+.flexi-gallery-wide_info .flexi_set_bottom {
+  text-align: center;
+  width: 100%;
+}
+
+.flexi-gallery-wide_info h2 {
+  font: bold 16px sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  color: #2b2b2b;
+}
+
+/* Article excerpt */
+
+.flexi-gallery-wide_info span {
+  line-height: 20px;
+  margin-bottom: 0px;
+}
+
+.flexi-gallery-wide_info a.read-more {
+  background-color: #87bcd7;
+  cursor: pointer;
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .flexi-gallery-wide {
+    max-width: 350px;
+  }
+
+  .flexi-gallery-wide_img a img {
+    float: none;
+    width: 100%;
+    object-fit: scale-down;
+  }
+
+  .flexi-gallery-wide_info {
+    float: none;
+    padding: 10px;
+    width: 100%;
+    min-height: 50px;
+  }
+}
