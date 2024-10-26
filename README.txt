@@ -151,7 +151,7 @@ You can also add/remove form fields based on pages & posts.
 * **Animated thumbnail** - High quality animated gif file for mp4 and other video formats
 
 > If any suggestion, contact at navneet@odude.com
-> Byte update at https://github.com/gupta977/flexi/
+> Byte update at https://github.com/odudename/flexi
 
 == Installation ==
 
