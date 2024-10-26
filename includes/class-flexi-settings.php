@@ -114,7 +114,7 @@ class FLEXI_Admin_Settings
      */
     public function get_sections()
     {
-        $category_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $category_help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
         $sections = array(
             array(
@@ -191,11 +191,11 @@ class FLEXI_Admin_Settings
             $file_size_limit = 100;
         }
 
-        $primary_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/information/primary-gallery-page/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
-        $popup_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/customize-lightbox-or-popup/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
-        $submission_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
-        $edit_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/modify-submission-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
-        $category_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $primary_help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/information/primary-gallery-page/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $popup_help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/tutorial/customize-lightbox-or-popup/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $submission_help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/shortcode/flexi-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $edit_help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/tutorial/modify-submission-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $category_help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
         //Import layout page link
         $layout_page = admin_url('admin.php?page=flexi');

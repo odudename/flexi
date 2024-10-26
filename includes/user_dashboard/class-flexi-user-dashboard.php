@@ -11,7 +11,7 @@
  */
 class Flexi_User_Dashboard
 {
-    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/information/my-gallery-page/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/information/my-gallery-page/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
     public function __construct()
     {
@@ -196,80 +196,80 @@ class Flexi_User_Dashboard
                 $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
 
 ?>
-<div class="fl-card <?php echo esc_attr($style_base_color); ?> <?php echo esc_attr($style_text_color); ?>">
-    <div class="fl-card-content">
-        <div class="fl-columns fl-is-mobile fl-is-centered">
-            <div class="fl-column fl-is-one-third fl-has-text-centered">
-                <?php echo wp_kses_post(flexi_author($current_user->user_login)); ?>
-            </div>
+                <div class="fl-card <?php echo esc_attr($style_base_color); ?> <?php echo esc_attr($style_text_color); ?>">
+                    <div class="fl-card-content">
+                        <div class="fl-columns fl-is-mobile fl-is-centered">
+                            <div class="fl-column fl-is-one-third fl-has-text-centered">
+                                <?php echo wp_kses_post(flexi_author($current_user->user_login)); ?>
+                            </div>
 
-            <?php
+                            <?php
                             $enable_search = flexi_get_option('enable_dashboard_search', 'flexi_user_dashboard_settings', 1);
                             if ("1" == $enable_search) {
                             ?>
 
 
-            <div class="fl-column fl-has-text-right">
-                <form
-                    action="<?php echo flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings'); ?>"
-                    id="theForm" onkeydown="return event.key != 'Enter';">
+                                <div class="fl-column fl-has-text-right">
+                                    <form
+                                        action="<?php echo flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings'); ?>"
+                                        id="theForm" onkeydown="return event.key != 'Enter';">
 
-                    <div class="fl-field fl-is-grouped">
-                        <p class="fl-control fl-is-expanded">
-                            <input id="search_value" class="fl-input" name="search" type="text"
-                                placeholder="<?php echo __('My search', 'flexi'); ?>">
-                            <input type="hidden" id="search_url"
-                                value="<?php echo flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings'); ?>">
-                        </p>
-                        <p class="fl-control">
-                            <a id="flexi_search" class="fl-button fl-is-info">
-                                <?php echo __("Search", "flexi"); ?>
-                            </a>
-                        </p>
-                    </div>
+                                        <div class="fl-field fl-is-grouped">
+                                            <p class="fl-control fl-is-expanded">
+                                                <input id="search_value" class="fl-input" name="search" type="text"
+                                                    placeholder="<?php echo __('My search', 'flexi'); ?>">
+                                                <input type="hidden" id="search_url"
+                                                    value="<?php echo flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings'); ?>">
+                                            </p>
+                                            <p class="fl-control">
+                                                <a id="flexi_search" class="fl-button fl-is-info">
+                                                    <?php echo __("Search", "flexi"); ?>
+                                                </a>
+                                            </p>
+                                        </div>
 
-                </form>
-            </div>
+                                    </form>
+                                </div>
 
-            <?php
+                            <?php
                             }
                             ?>
-        </div>
+                        </div>
 
-        <div class="fl-columns fl-is-mobile fl-is-centered">
-            <div class="fl-column fl-is-full">
+                        <div class="fl-columns fl-is-mobile fl-is-centered">
+                            <div class="fl-column fl-is-full">
 
-                <div class="fl-tabs fl-is-centered fl-is-boxed">
-                    <ul>
-                        <li <?php if ($tab_arg == "public") {
+                                <div class="fl-tabs fl-is-centered fl-is-boxed">
+                                    <ul>
+                                        <li <?php if ($tab_arg == "public") {
                                                 echo 'class="fl-is-active"';
                                             }
                                             ?>>
-                            <a href="<?php echo esc_url($link_public); ?>" class="flexi-text-style">
-                                <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                <span><?php echo __('Published', 'flexi'); ?></span>
-                            </a>
-                        </li>
-                        <li <?php if ($tab_arg == "private") {
+                                            <a href="<?php echo esc_url($link_public); ?>" class="flexi-text-style">
+                                                <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                                                <span><?php echo __('Published', 'flexi'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li <?php if ($tab_arg == "private") {
                                                 echo 'class="fl-is-active"';
                                             }
                                             ?>>
-                            <a href="<?php echo esc_url($link_private); ?>" class="flexi-text-style">
-                                <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                <span><?php echo __('Under review', 'flexi'); ?></span>
-                            </a>
-                        </li>
+                                            <a href="<?php echo esc_url($link_private); ?>" class="flexi-text-style">
+                                                <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                                                <span><?php echo __('Under review', 'flexi'); ?></span>
+                                            </a>
+                                        </li>
 
-                    </ul>
-                </div>
+                                    </ul>
+                                </div>
 
-                <div id="my_post">
-                    <?php do_action('flexi_user_dashboard'); ?>
+                                <div id="my_post">
+                                    <?php do_action('flexi_user_dashboard'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php
 

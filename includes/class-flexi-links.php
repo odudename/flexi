@@ -38,7 +38,7 @@ class Flexi_admin_links
 
         //    $more_links[] = '<a target="_blank" href="https://wordpress.org/support/plugin/wp-upg/reviews/?rate=5#new-post" title="' . __('Rate the plugin', 'wp-reset') . '">' . __('Rate the plugin', 'wp-upg') . ' ★★★★★</a>';
         $more_links[] = 'Version ' . FLEXI_VERSION;
-        $more_links[] = '<a href="https://odude.com/docs/flexi-gallery/" target="_blank">' . __('Docs & FAQs', 'flexi') . '</a>';
+        $more_links[] = '<a href="https://odude.com/flexi/docs/flexi-gallery/" target="_blank">' . __('Docs & FAQs', 'flexi') . '</a>';
         $links = $more_links + $links;
         return $links;
     }

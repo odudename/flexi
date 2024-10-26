@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Enable support of Ultimate Member plugin
  *
@@ -10,7 +11,7 @@
  */
 class Flexi_Addon_Ultimate_Member
 {
-    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/ultimate-member-user-gallery/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/tutorial/ultimate-member-user-gallery/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
     public function __construct()
     {

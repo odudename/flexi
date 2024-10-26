@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Create detail page for the post
  *
@@ -8,10 +9,12 @@
  * @package    Flexi
  * @subpackage Flexi/includes
  */
-class Flexi_Public_Detail {
-	private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/information/detail-layout/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+class Flexi_Public_Detail
+{
+	private $help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/information/detail-layout/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
-	public function __construct() {
+	public function __construct()
+	{
 		add_filter('flexi_settings_fields', array($this, 'add_fields'));
 		//
 	}
@@ -23,7 +26,8 @@ class Flexi_Public_Detail {
 	 * @param  string $content Content of the current post.
 	 * @return string $content Modified Content.
 	 */
-	public function the_content($content) {
+	public function the_content($content)
+	{
 		if (is_singular('flexi') && in_the_loop() && is_main_query()) {
 			global $post;
 
@@ -44,7 +48,8 @@ class Flexi_Public_Detail {
 	}
 
 	//Add section fields at Flexi Setting > Icons & user access settings
-	public function add_fields($new) {
+	public function add_fields($new)
+	{
 
 		$fields = array(
 			'flexi_icon_settings' => array(
@@ -64,7 +69,8 @@ class Flexi_Public_Detail {
 	}
 
 	//Add icons at user grid
-	public function add_icon($icon, $post = null) {
+	public function add_icon($icon, $post = null)
+	{
 		if (null == $post) {
 			global $post;
 		}

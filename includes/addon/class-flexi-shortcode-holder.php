@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode holders, let admin to execute 3rd plugin shortcode at gallery & detail page
  *
@@ -10,7 +11,7 @@
  */
 class Flexi_Addon_Shortcode_Holder
 {
-    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/shortcode-holder/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/tutorial/shortcode-holder/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
     public function __construct()
     {

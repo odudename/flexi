@@ -11,7 +11,7 @@
  */
 class Flexi_Addon_Custom_Fields
 {
-    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/custom-field/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/flexi/docs/flexi-gallery/tutorial/custom-field/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
     public function __construct()
     {
         add_filter('manage_flexi_posts_columns', array($this, 'new_column'), 10, 2);
