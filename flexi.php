@@ -43,7 +43,7 @@ define('FLEXI_FOLDER', dirname(plugin_basename(__FILE__)));
 define('FLEXI_PLUGIN_URL', content_url('/plugins/' . FLEXI_FOLDER));
 define('FLEXI_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . FLEXI_FOLDER . '/');
 define('FLEXI_ROOT_URL', plugin_dir_url(__FILE__));
-define('FLEXI_HOST', "https://odude.com/wp-json/lmfwc/v2/licenses/");
+define('FLEXI_HOST', "https://odude.com/flexi/wp-json/lmfwc/v2/licenses/");
 define('FLEXI_CK', 'ck_cc93b6452693ea129f6fb4696f50275a4282840a');
 define('FLEXI_CS', 'cs_5bab8367ab36992b00f1fe69d866c3bbf4820dbe');
 

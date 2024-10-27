@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin dashboard tab to enable Flexi-Pro
  *
@@ -8,13 +9,16 @@
  * @package    Flexi
  * @subpackage Flexi/includes/dashboard
  */
-class Flexi_Admin_Dashboard_Pro {
-	public function __construct() {
+class Flexi_Admin_Dashboard_Pro
+{
+	public function __construct()
+	{
 		add_filter('flexi_dashboard_tab', array($this, 'add_tabs'));
 		add_action('flexi_dashboard_tab_content', array($this, 'add_content'));
 	}
 
-	public function add_tabs($tabs) {
+	public function add_tabs($tabs)
+	{
 
 		$extra_tabs = array("pro" => __('Flexi-Pro', 'flexi'));
 
@@ -24,17 +28,19 @@ class Flexi_Admin_Dashboard_Pro {
 		return $new;
 	}
 
-	public function add_content() {
+	public function add_content()
+	{
 
 		if (isset($_GET['tab']) && 'pro' == $_GET['tab']) {
 			echo $this->flexi_dashboard_content();
 		}
 	}
 
-	public function flexi_dashboard_content() {
+	public function flexi_dashboard_content()
+	{
 		ob_start();
 
-		?>
+?>
 
 <div style="text-align:right;"> <a href="https://odude.com/product-category/flexi/"
         class="button-secondary">Purchase/Renew Flexi-PRO</a> </div>
@@ -51,7 +57,7 @@ class Flexi_Admin_Dashboard_Pro {
 
 
 <?php
-if (isset($_POST['flexi_license'])) {
+		if (isset($_POST['flexi_license'])) {
 			if (function_exists('flexi_process_license')) {
 
 				//First deactivate old license and renew new one
@@ -63,8 +69,20 @@ if (isset($_POST['flexi_license'])) {
 				}
 
 				$res = flexi_process_license(sanitize_text_field($_POST['flexi_license']));
-				if ('404' == $res->data->status) {
-					echo '<div class="card"><h3>' . esc_attr($res->message) . '</h3></div>';
+
+
+				// Check if errors are present in the response data
+				if (isset($res->data->errors)) {
+					// Retrieve the first key from the errors object
+					$errorKeys = array_keys(get_object_vars($res->data->errors));
+					$errorType = $errorKeys[0] ?? null;
+
+					// Check if the error type and message exist
+					if ($errorType && isset($res->data->errors->$errorType[0])) {
+						echo '<div class="card"><h3>' . $res->data->errors->$errorType[0] . '</h3></div>';
+					} else {
+						echo '<div class="card"><h3>Unknown error occurred.</h3></div>';
+					}
 				} else {
 					echo '<div class="card"><h3>License activated</h3></div>';
 				}
@@ -79,31 +97,31 @@ if (isset($_POST['flexi_license'])) {
     <h3 class="title">Flexi-PRO Status</h3>
     <b>Flexi Version: </b> <?php echo esc_attr(FLEXI_VERSION); ?><br>
     <b>Flexi-PRO status:</b> <?php if (is_flexi_pro()) {
-			echo "#####.....<b>Activated</b>.....#####";
-		} else {
-			echo "Not activated";
-		}?><br>
+											echo "#####.....<b>Activated</b>.....#####";
+										} else {
+											echo "Not activated";
+										} ?><br>
     <?php
-if (is_flexi_pro()) {
-			echo "<b>Flexi-PRO version </b>:" . esc_attr(FLEXI_PRO_VERSION);
+			if (is_flexi_pro()) {
+				echo "<b>Flexi-PRO version </b>:" . esc_attr(FLEXI_PRO_VERSION);
 
-			$expire = get_option('FLEXI_PRO_EXPIRE', '');
-			if ('' != $expire) {
-				$expdAt = date($expire);
-				$today = date("Y-m-d H:i:s");
-				if ($today >= $expdAt) {
-					echo "<br><b>Expired:</b> " . esc_attr($expdAt) . '<br><code> Please renew to regain access for premium features.</code>';
-					update_option('FLEXI_PRO', 'FAIL');
-				} else {
-					echo "<br><b>Expires:</b> " . esc_attr($expdAt);
+				$expire = get_option('FLEXI_PRO_EXPIRE', '');
+				if ('' != $expire) {
+					$expdAt = date($expire);
+					$today = date("Y-m-d H:i:s");
+					if ($today >= $expdAt) {
+						echo "<br><b>Expired:</b> " . esc_attr($expdAt) . '<br><code> Please renew to regain access for premium features.</code>';
+						update_option('FLEXI_PRO', 'FAIL');
+					} else {
+						echo "<br><b>Expires:</b> " . esc_attr($expdAt);
+					}
 				}
 			}
-		}
-		?>
+			?>
     <br>
     <?php
-echo get_option('FLEXI_PRO_RESPONSE', '');
-		?>
+			echo get_option('FLEXI_PRO_RESPONSE', '');
+			?>
 </div>
 
 <div class="card">
@@ -159,7 +177,7 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
     </p>
 </div>
 <?php
-$content = ob_get_clean();
+		$content = ob_get_clean();
 		return $content;
 	}
 }
