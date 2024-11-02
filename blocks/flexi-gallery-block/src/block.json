@@ -1,92 +1,116 @@
 {
-    "apiVersion": 2,
-    "name": "create-block/flexi-gallery-block",
-    "title": "Gallery Block",
-    "category": "media",
-    "icon": "format-gallery",
-    "description": "A flexible gallery block with various settings.",
-    "supports": {
-        "html": false
-    },
-    "attributes": {
-        "column": {
-            "type": "number",
-            "default": 3
-        },
-        "cat": {
-            "type": "number",
-            "default": 0
-        },
-        "tag": {
-            "type": "string",
-            "default": ""
-        },
-        "filter": {
-            "type": "string",
-            "default": "none"
-        },
-        "orderby": {
-            "type": "string",
-            "default": "date"
-        },
-        "layout": {
-            "type": "string",
-            "default": "masonry"
-        },
-        "popup_style": {
-            "type": "string",
-            "default": "on"
-        },
-        "perpage": {
-            "type": "number",
-            "default": 10
-        },
-        "padding": {
-            "type": "number",
-            "default": 5
-        },
-        "popup": {
-            "type": "boolean",
-            "default": false
-        },
-        "hover_effect": {
-            "type": "string",
-            "default": ""
-        },
-        "hover_caption": {
-            "type": "string",
-            "default": "flexi_caption_none"
-        },
-        "evalue_title": {
-            "type": "boolean",
-            "default": false
-        },
-        "evalue_excerpt": {
-            "type": "boolean",
-            "default": false
-        },
-        "evalue_category": {
-            "type": "boolean",
-            "default": false
-        },
-        "evalue_tag": {
-            "type": "boolean",
-            "default": false
-        },
-        "evalue_count": {
-            "type": "boolean",
-            "default": false
-        },
-        "evalue_like": {
-            "type": "boolean",
-            "default": false
-        },
-        "evalue_unlike": {
-            "type": "boolean",
-            "default": false
-        }
-    },
-    "editorScript": "file:./index.js",
-    "script": "file:./index.js",
-    "style": "file:./style.css"
+	"apiVersion": 2,
+	"name": "create-block/flexi-gallery-block",
+	"title": "Gallery Block",
+	"category": "media",
+	"icon": "format-gallery",
+	"description": "A flexible gallery block with various settings.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"column": {
+			"type": "number",
+			"default": 3
+		},
+		"cat": {
+			"type": "number",
+			"default": 0
+		},
+		"tag": {
+			"type": "string",
+			"default": ""
+		},
+		"filter": {
+			"type": "string",
+			"default": "none"
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date"
+		},
+		"layout": {
+			"type": "string",
+			"default": "masonry"
+		},
+		"popup_style": {
+			"type": "string",
+			"default": "on"
+		},
+		"perpage": {
+			"type": "number",
+			"default": 10
+		},
+		"padding": {
+			"type": "number",
+			"default": 5
+		},
+		"popup": {
+			"type": "boolean",
+			"default": false
+		},
+		"hover_effect": {
+			"type": "string",
+			"default": ""
+		},
+		"hover_caption": {
+			"type": "string",
+			"default": "flexi_caption_none"
+		},
+		"evalue_title": {
+			"type": "boolean",
+			"default": false
+		},
+		"evalue_excerpt": {
+			"type": "boolean",
+			"default": false
+		},
+		"evalue_category": {
+			"type": "boolean",
+			"default": false
+		},
+		"evalue_tag": {
+			"type": "boolean",
+			"default": false
+		},
+		"evalue_count": {
+			"type": "boolean",
+			"default": false
+		},
+		"evalue_like": {
+			"type": "boolean",
+			"default": false
+		},
+		"evalue_unlike": {
+			"type": "boolean",
+			"default": false
+		},
+		"at_sidebar": {
+			"type": "boolean",
+			"default": true
+		},
+		"evalue_icon": {
+			"type": "boolean",
+			"default": true
+		},
+		"evalue_custom": {
+			"type": "boolean",
+			"default": false
+		},
+		"width": {
+			"type": "number",
+			"default": 150
+		},
+		"height": {
+			"type": "number",
+			"default": 150
+		},
+		"tag_show": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"editorScript": "file:./index.js",
+	"script": "file:./index.js",
+	"style": "file:./style.css"
 }

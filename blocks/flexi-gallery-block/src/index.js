@@ -11,8 +11,14 @@ import {
 import { Fragment } from '@wordpress/element';
 
 registerBlockType('create-block/flexi-gallery-block', {
+    apiVersion: 2,
     title: 'Gallery Block',
     category: 'media',
+    icon: 'format-gallery',
+    description: 'A flexible gallery block with various settings.',
+    supports: {
+        html: false,
+    },
     attributes: {
         column: {
             type: 'number',
@@ -87,6 +93,30 @@ registerBlockType('create-block/flexi-gallery-block', {
             default: false,
         },
         evalue_unlike: {
+            type: 'boolean',
+            default: false,
+        },
+        at_sidebar: {
+            type: 'boolean',
+            default: true,
+        },
+        evalue_icon: {
+            type: 'boolean',
+            default: true,
+        },
+        evalue_custom: {
+            type: 'boolean',
+            default: false,
+        },
+        width: {
+            type: 'number',
+            default: 150,
+        },
+        height: {
+            type: 'number',
+            default: 150,
+        },
+        tag_show: {
             type: 'boolean',
             default: false,
         },
@@ -175,6 +205,20 @@ registerBlockType('create-block/flexi-gallery-block', {
                                 min={1}
                                 max={100}
                             />
+                            <RangeControl
+                                label="Width"
+                                value={attributes.width}
+                                onChange={(width) => setAttributes({ width })}
+                                min={50}
+                                max={500}
+                            />
+                            <RangeControl
+                                label="Height"
+                                value={attributes.height}
+                                onChange={(height) => setAttributes({ height })}
+                                min={50}
+                                max={500}
+                            />
                         </PanelBody>
                         <PanelBody title="Toggle Controls">
                             <ToggleControl
@@ -216,6 +260,11 @@ registerBlockType('create-block/flexi-gallery-block', {
                                 label="Enable Unlike Button"
                                 checked={attributes.evalue_unlike}
                                 onChange={(evalue_unlike) => setAttributes({ evalue_unlike })}
+                            />
+                            <ToggleControl
+                                label="Show Tags"
+                                checked={attributes.tag_show}
+                                onChange={(tag_show) => setAttributes({ tag_show })}
                             />
                         </PanelBody>
                     </InspectorControls>

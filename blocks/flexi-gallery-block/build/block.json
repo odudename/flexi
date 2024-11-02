@@ -84,6 +84,30 @@
     "evalue_unlike": {
       "type": "boolean",
       "default": false
+    },
+    "at_sidebar": {
+      "type": "boolean",
+      "default": true
+    },
+    "evalue_icon": {
+      "type": "boolean",
+      "default": true
+    },
+    "evalue_custom": {
+      "type": "boolean",
+      "default": false
+    },
+    "width": {
+      "type": "number",
+      "default": 150
+    },
+    "height": {
+      "type": "number",
+      "default": 150
+    },
+    "tag_show": {
+      "type": "boolean",
+      "default": false
     }
   },
   "editorScript": "file:./index.js",

@@ -1,6 +1,6 @@
 import { InspectorControls } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
-import { PanelBody, ToggleControl, RangeControl, SelectControl } from '@wordpress/components';
+import { PanelBody, ToggleControl, RangeControl, SelectControl, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 const Edit = ( { attributes, setAttributes } ) => {
@@ -12,7 +12,7 @@ const Edit = ( { attributes, setAttributes } ) => {
                     <RangeControl
                         label={ __( 'Columns', 'flexi-gallery-block' ) }
                         value={ attributes.column }
-                        onChange={ ( column) => setAttributes( { column } ) }
+                        onChange={ ( column ) => setAttributes( { column } ) }
                         min={ 1 }
                         max={ 6 }
                     />
@@ -119,12 +119,108 @@ const Edit = ( { attributes, setAttributes } ) => {
                         ] }
                         onChange={ ( hover_caption ) => setAttributes( { hover_caption } ) }
                     />
+                    <RangeControl
+                        label={ __( 'Image Spacing', 'flexi-gallery-block' ) }
+                        value={ attributes.image_spacing }
+                        onChange={ ( image_spacing ) => setAttributes( { image_spacing } ) }
+                        min={ 0 }
+                        max={ 50 }
+                    />
+                    <ToggleControl
+                        label={ __( 'Enable Lazy Load', 'flexi-gallery-block' ) }
+                        checked={ attributes.lazy_load }
+                        onChange={ ( lazy_load ) => setAttributes( { lazy_load } ) }
+                    />
+                    <SelectControl
+                        label={ __( 'Image Size', 'flexi-gallery-block' ) }
+                        value={ attributes.image_size }
+                        options={ [
+                            { label: 'Small', value: 'small' },
+                            { label: 'Medium', value: 'medium' },
+                            { label: 'Large', value: 'large' },
+                        ] }
+                        onChange={ ( image_size ) => setAttributes( { image_size } ) }
+                    />
+                    <ToggleControl
+                        label={ __( 'Show Navigation Arrows', 'flexi-gallery-block' ) }
+                        checked={ attributes.show_navigation }
+                        onChange={ ( show_navigation ) => setAttributes( { show_navigation } ) }
+                    />
+                    <SelectControl
+                        label={ __( 'Navigation Style', 'flexi-gallery-block' ) }
+                        value={ attributes.navigation_style }
+                        options={ [
+                            { label: 'Dots', value: 'dots' },
+                            { label: 'Arrows', value: 'arrows' },
+                        ] }
+                        onChange={ ( navigation_style ) => setAttributes( { navigation_style } ) }
+                    />
+                    <ToggleControl
+                        label={ __( 'Enable Filter', 'flexi-gallery-block' ) }
+                        checked={ attributes.enable_filter }
+                        onChange={ ( enable_filter ) => setAttributes( { enable_filter } ) }
+                    />
+                    <SelectControl
+                        label={ __( 'Selected Filter', 'flexi-gallery-block' ) }
+                        value={ attributes.selected_filter }
+                        options={ [
+                            { label: 'All', value: 'all' },
+                            { label: 'Featured', value: 'featured' },
+                        ] }
+                        onChange={ ( selected_filter ) => setAttributes( { selected_filter } ) }
+                    />
+                    <ToggleControl
+                        label={ __( 'Enable Caption', 'flexi-gallery-block' ) }
+                        checked={ attributes.enable_caption }
+                        onChange={ ( enable_caption ) => setAttributes( { enable_caption } ) }
+                    />
+                    <ToggleControl
+                        label={ __( 'Enable Grid Layout', 'flexi-gallery-block' ) }
+                        checked={ attributes.enable_grid }
+                        onChange={ ( enable_grid ) => setAttributes( { enable_grid } ) }
+                    />
+
+                    {/* Additional controls for new attributes */}
+                    <ToggleControl
+                        label={ __( 'Show Tags', 'flexi-gallery-block' ) }
+                        checked={ attributes.tag_show }
+                        onChange={ ( tag_show ) => setAttributes( { tag_show } ) }
+                    />
+                    <RangeControl
+                        label={ __( 'Width', 'flexi-gallery-block' ) }
+                        value={ attributes.width }
+                        onChange={ ( width ) => setAttributes( { width } ) }
+                        min={ 0 }
+                        max={ 1000 } // Adjust this range as needed
+                    />
+                    <RangeControl
+                        label={ __( 'Height', 'flexi-gallery-block' ) }
+                        value={ attributes.height }
+                        onChange={ ( height ) => setAttributes( { height } ) }
+                        min={ 0 }
+                        max={ 1000 } // Adjust this range as needed
+                    />
+                    <TextControl
+                        label={ __( 'Custom Value', 'flexi-gallery-block' ) }
+                        value={ attributes.evalue_custom }
+                        onChange={ ( evalue_custom ) => setAttributes( { evalue_custom } ) }
+                    />
+                    <TextControl
+                        label={ __( 'Icon', 'flexi-gallery-block' ) }
+                        value={ attributes.evalue_icon }
+                        onChange={ ( evalue_icon ) => setAttributes( { evalue_icon } ) }
+                    />
+                    <ToggleControl
+                        label={ __( 'Show At Sidebar', 'flexi-gallery-block' ) }
+                        checked={ attributes.at_sidebar }
+                        onChange={ ( at_sidebar ) => setAttributes( { at_sidebar } ) }
+                    />
                 </PanelBody>
             </InspectorControls>
 
-            {/* ServerSideRender for dynamic server-rendered content */}
+            {/* Render the gallery */}
             <ServerSideRender
-                block="create-block/flexi-gallery-block"
+                block="flexi-gallery-block/gallery"
                 attributes={ attributes }
             />
         </div>

@@ -43,7 +43,7 @@ function render_flexi_gallery_block($attributes)
 	$animation_style = isset($attributes['animationStyle']) ? $attributes['animationStyle'] : 'fade';
 
 	ob_start();
-	print_r($attributes);
+	var_dump($attributes);
 ?>
 	<div class="flexi-gallery-block">
 
