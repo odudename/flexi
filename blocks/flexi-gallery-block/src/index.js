@@ -1,5 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import ServerSideRender from '@wordpress/server-side-render';
 import {
     PanelBody,
     RangeControl,
@@ -172,7 +173,7 @@ registerBlockType('create-block/flexi-gallery-block', {
                                 max={5}
                             />
                             <RangeControl
-                                label="Post Per Page"
+                                label="Posts Per Page"
                                 value={attributes.perpage}
                                 onChange={(perpage) => setAttributes({ perpage })}
                                 min={1}
@@ -186,7 +187,7 @@ registerBlockType('create-block/flexi-gallery-block', {
                                 onChange={(popup) => setAttributes({ popup })}
                             />
                             <ToggleControl
-                                label="Display title"
+                                label="Display Title"
                                 checked={attributes.evalue_title}
                                 onChange={(evalue_title) => setAttributes({ evalue_title })}
                             />
@@ -195,9 +196,37 @@ registerBlockType('create-block/flexi-gallery-block', {
                                 checked={attributes.evalue_excerpt}
                                 onChange={(evalue_excerpt) => setAttributes({ evalue_excerpt })}
                             />
+                            <ToggleControl
+                                label="Display Category"
+                                checked={attributes.evalue_category}
+                                onChange={(evalue_category) => setAttributes({ evalue_category })}
+                            />
+                            <ToggleControl
+                                label="Display Tag"
+                                checked={attributes.evalue_tag}
+                                onChange={(evalue_tag) => setAttributes({ evalue_tag })}
+                            />
+                            <ToggleControl
+                                label="Display Count"
+                                checked={attributes.evalue_count}
+                                onChange={(evalue_count) => setAttributes({ evalue_count })}
+                            />
+                            <ToggleControl
+                                label="Enable Like Button"
+                                checked={attributes.evalue_like}
+                                onChange={(evalue_like) => setAttributes({ evalue_like })}
+                            />
+                            <ToggleControl
+                                label="Enable Unlike Button"
+                                checked={attributes.evalue_unlike}
+                                onChange={(evalue_unlike) => setAttributes({ evalue_unlike })}
+                            />
                         </PanelBody>
                     </InspectorControls>
-                    <p>Gallery Block--- columns</p>
+                    <ServerSideRender
+                        block="create-block/flexi-gallery-block"
+                        attributes={attributes}
+                    />
                 </div>
             </Fragment>
         );

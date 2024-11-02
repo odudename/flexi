@@ -28,18 +28,29 @@ if (! defined('ABSPATH')) {
 function create_block_flexi_gallery_block_block_init()
 {
 	register_block_type(__DIR__ . '/build', array(
-		'render_callback' => 'flexi_render_gallery_block',
+		'render_callback' => 'render_flexi_gallery_block',
 	));
 }
 add_action('init', 'create_block_flexi_gallery_block_block_init');
 
 
-function flexi_render_gallery_block($attributes)
+function render_flexi_gallery_block($attributes)
 {
+
+	$columns = isset($attributes['columns']) ? $attributes['columns'] : 3;
+	$lightbox_enabled = isset($attributes['lightboxEnabled']) ? $attributes['lightboxEnabled'] : true;
+	$show_captions = isset($attributes['showCaptions']) ? $attributes['showCaptions'] : true;
+	$animation_style = isset($attributes['animationStyle']) ? $attributes['animationStyle'] : 'fade';
+
 	ob_start();
 ?>
-	<div class="custom-gallery" data-columns="<?php echo esc_attr($attributes['columns']); ?>">
-		<p>Gallery Block: <?php echo esc_attr($attributes['columns']); ?> columns</p>
+	<div class="flexi-gallery-block" data-columns="<?php echo esc_attr($columns); ?>"
+		data-animation="<?php echo esc_attr($animation_style); ?>">
+		<!-- Sample gallery content with attributes -->
+
+		<p>Columns: <?php echo esc_html($columns); ?></p>
+		<p>Lightbox Enabled: <?php echo esc_html($lightbox_enabled ? 'Yes' : 'No'); ?></p>
+		<p>Show Captions: <?php echo esc_html($show_captions ? 'Yes' : 'No'); ?></p>
 	</div>
 <?php
 	return ob_get_clean();
