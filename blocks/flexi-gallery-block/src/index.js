@@ -14,7 +14,7 @@ registerBlockType('create-block/flexi-gallery-block', {
     title: 'Gallery Block',
     category: 'media',
     attributes: {
-        columns: {
+        column: {
             type: 'number',
             default: 3,
         },
@@ -41,10 +41,6 @@ registerBlockType('create-block/flexi-gallery-block', {
         popup_style: {
             type: 'string',
             default: 'on',
-        },
-        column: {
-            type: 'number',
-            default: 3,
         },
         perpage: {
             type: 'number',

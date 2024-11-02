@@ -9,7 +9,7 @@
         "html": false
     },
     "attributes": {
-        "columns": {
+        "column": {
             "type": "number",
             "default": 3
         },
@@ -36,10 +36,6 @@
         "popup_style": {
             "type": "string",
             "default": "on"
-        },
-        "column": {
-            "type": "number",
-            "default": 3
         },
         "perpage": {
             "type": "number",

@@ -43,10 +43,9 @@ function render_flexi_gallery_block($attributes)
 	$animation_style = isset($attributes['animationStyle']) ? $attributes['animationStyle'] : 'fade';
 
 	ob_start();
+	print_r($attributes);
 ?>
-	<div class="flexi-gallery-block" data-columns="<?php echo esc_attr($columns); ?>"
-		data-animation="<?php echo esc_attr($animation_style); ?>">
-		<!-- Sample gallery content with attributes -->
+	<div class="flexi-gallery-block">
 
 		<p>Columns: <?php echo esc_html($columns); ?></p>
 		<p>Lightbox Enabled: <?php echo esc_html($lightbox_enabled ? 'Yes' : 'No'); ?></p>

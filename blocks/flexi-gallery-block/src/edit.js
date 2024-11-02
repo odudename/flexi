@@ -12,7 +12,7 @@ const Edit = ( { attributes, setAttributes } ) => {
                     <RangeControl
                         label={ __( 'Columns', 'flexi-gallery-block' ) }
                         value={ attributes.column }
-                        onChange={ ( column ) => setAttributes( { column } ) }
+                        onChange={ ( column) => setAttributes( { column } ) }
                         min={ 1 }
                         max={ 6 }
                     />
