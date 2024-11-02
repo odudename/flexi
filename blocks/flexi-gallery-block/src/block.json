@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/flexi-gallery-block",
+	"version": "0.1.0",
+	"title": "Flexi Gallery Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"attributes": {
+	  "galleryId": {
+		"type": "number"
+	  },
+	  "columns": {
+		"type": "number",
+		"default": 3
+	  },
+	  "lightboxEnabled": {
+		"type": "boolean",
+		"default": true
+	  },
+	  "showCaptions": {
+		"type": "boolean",
+		"default": true
+	  },
+	  "animationStyle": {
+		"type": "string",
+		"default": "fade"
+	  }
+	},
+	"example": {},
+	"supports": {
+	  "html": false
+	},
+	"textdomain": "flexi-gallery-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+  }
+  
