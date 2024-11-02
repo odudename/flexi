@@ -1,6 +1,8 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
+import { useSelect } from '@wordpress/data';
+import { Fragment } from '@wordpress/element';
 import {
     PanelBody,
     RangeControl,
@@ -8,7 +10,7 @@ import {
     ToggleControl,
     TextControl,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+
 
 registerBlockType('create-block/flexi-gallery-block', {
     apiVersion: 2,
@@ -122,7 +124,42 @@ registerBlockType('create-block/flexi-gallery-block', {
         },
     },
     edit: ({ attributes, setAttributes }) => {
+
+        const categoriesList = useSelect((select) => 
+            select('core').getEntityRecords('taxonomy', 'flexi_category', { per_page: -1 }),
+        [], []);
+    
+        const buildCategoryTree = (categories) => {
+            let categoryOptions = [
+                {
+                    label: '-- Select All --',
+                    value: 0,
+                },
+            ];
+    
+            if (categories && categories.length > 0) {
+                // You can implement a grouping and tree-building logic if needed
+                categories.forEach(category => {
+                    categoryOptions.push({
+                        label: category.name,
+                        value: category.id,
+                    });
+                });
+            }
+    
+            return categoryOptions;
+        };
+    
+        const categories = buildCategoryTree(categoriesList || []);
+    
+console.log(categories);
+
+
+
         const blockProps = useBlockProps();
+     
+
+
 
         return (
             <Fragment>
