@@ -525,71 +525,71 @@ class Flexi_Shortcode_Gallery
             ob_start();
 ?>
 
-<script>
-jQuery(document).ready(function() {
-    // console.log("start");
-    document.documentElement.style.setProperty('--flexi_padding', jQuery("#padding").text());
+            <script>
+                jQuery(document).ready(function() {
+                    // console.log("start");
+                    document.documentElement.style.setProperty('--flexi_padding', jQuery("#padding").text());
 
-    <?php
+                    <?php
                     $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
                     if ('1' != $enable_conflict) {
                         if ('inline' == $atts['popup']) {
                     ?>
-    jQuery('[data-fancybox-trigger').fancybox({
-        selector: '.flexi_show_popup_<?php echo esc_attr($atts['popup']); ?> a:visible',
-        thumbs: {
-            autoStart: false
-        },
-        protect: false,
-        arrows: false,
-    });
-    <?php
+                            jQuery('[data-fancybox-trigger').fancybox({
+                                selector: '.flexi_show_popup_<?php echo esc_attr($atts['popup']); ?> a:visible',
+                                thumbs: {
+                                    autoStart: false
+                                },
+                                protect: false,
+                                arrows: false,
+                            });
+                        <?php
                         } elseif ('custom' == $atts['popup']) {
 
                         ?>
-    jQuery('[custom-lightbox').fancybox({
-        selector: '.flexi_show_popup_custom a:visible',
-        thumbs: {
-            autoStart: false
-        },
-        autoSize: false,
-        protect: false,
-        arrows: false,
-    });
-    <?php
+                            jQuery('[custom-lightbox').fancybox({
+                                selector: '.flexi_show_popup_custom a:visible',
+                                thumbs: {
+                                    autoStart: false
+                                },
+                                autoSize: false,
+                                protect: false,
+                                arrows: false,
+                            });
+                        <?php
                         } elseif ('simple' == $atts['popup'] || 'simple_info' == $atts['popup']) {
                         ?>
 
-    var lightbox = GODude();
-    var lightboxDescription = GODude({
-        selector: '.godude',
-    });
-    <?php
+                            var lightbox = GODude();
+                            var lightboxDescription = GODude({
+                                selector: '.godude',
+                            });
+                        <?php
                         } else {
                         ?>
-    jQuery('[data-fancybox-trigger').fancybox({
-        selector: '.flexi_show_popup_<?php echo esc_attr($atts['popup']); ?> a:visible',
-        thumbs: {
-            autoStart: true
-        },
-        protect: true,
-        caption: function(instance, item) {
-            //This is not working on ajax loading. only for for page navigation.
-            // return jQuery(this).closest('flexi_media_holder').find('flexi_figcaption').html();
-            return jQuery(this).find('.flexi_figcaption').html();
+                            jQuery('[data-fancybox-trigger').fancybox({
+                                selector: '.flexi_show_popup_<?php echo esc_attr($atts['popup']); ?> a:visible',
+                                thumbs: {
+                                    autoStart: true
+                                },
+                                protect: true,
+                                caption: function(instance, item) {
+                                    //This is not working on ajax loading. only for for page navigation.
+                                    // return jQuery(this).closest('flexi_media_holder').find('flexi_figcaption').html();
+                                    return jQuery(this).find('.flexi_figcaption').html();
 
 
-        }
-    });
-    <?php
+                                }
+                            });
+                    <?php
                         }
                     }
                     ?>
 
-});
-</script>
+                });
+            </script>
 
-<?php
+        <?php
             $put = ob_get_clean();
             echo $put;
         }
@@ -609,45 +609,45 @@ jQuery(document).ready(function() {
         ob_start();
 
         ?>
-<style>
-:root {
-    --flexi_t_width: <?php echo esc_attr($t_width);
-    ?>px;
-    --flexi_t_height: <?php echo esc_attr($t_height);
-    ?>px;
-    --flexi_m_width: <?php echo esc_attr($m_width);
-    ?>px;
-    --flexi_m_height: <?php echo esc_attr($m_height);
-    ?>px;
-    --flexi_l_width: <?php echo esc_attr($l_width);
-    ?>px;
-    --flexi_l_height: <?php echo esc_attr($l_height);
-    ?>px;
-    --flexi_padding: <?php echo esc_attr($padding);
-    ?>px;
-}
-</style>
-<?php
+        <style>
+            :root {
+                --flexi_t_width: <?php echo esc_attr($t_width);
+                                    ?>px;
+                --flexi_t_height: <?php echo esc_attr($t_height);
+                                    ?>px;
+                --flexi_m_width: <?php echo esc_attr($m_width);
+                                    ?>px;
+                --flexi_m_height: <?php echo esc_attr($m_height);
+                                    ?>px;
+                --flexi_l_width: <?php echo esc_attr($l_width);
+                                    ?>px;
+                --flexi_l_height: <?php echo esc_attr($l_height);
+                                    ?>px;
+                --flexi_padding: <?php echo esc_attr($padding);
+                                    ?>px;
+            }
+        </style>
+        <?php
         if (isset($_GET['flexi_layout'])) {
         ?>
-<style>
-.fl-column {
-    border-radius: .500em;
-    border: dotted;
-}
-</style>
-<script>
-jQuery(document).ready(function() {
-    var colors = ['red', 'blue', 'green', 'yellow', 'cyan', 'orange', 'pink', 'grey', 'white', 'black',
-        'rosybrown', 'tan', 'plum', 'saddlebrown'
-    ];
-    jQuery.each(jQuery('.fl-column'), function() {
-        var new_color = colors[Math.floor(Math.random() * colors.length)];
-        jQuery(this).css('background-color', new_color);
-    });
-});
-</script>
-<?php
+            <style>
+                .fl-column {
+                    border-radius: .500em;
+                    border: dotted;
+                }
+            </style>
+            <script>
+                jQuery(document).ready(function() {
+                    var colors = ['red', 'blue', 'green', 'yellow', 'cyan', 'orange', 'pink', 'grey', 'white', 'black',
+                        'rosybrown', 'tan', 'plum', 'saddlebrown'
+                    ];
+                    jQuery.each(jQuery('.fl-column'), function() {
+                        var new_color = colors[Math.floor(Math.random() * colors.length)];
+                        jQuery(this).css('background-color', new_color);
+                    });
+                });
+            </script>
+        <?php
         }
         ?>
 

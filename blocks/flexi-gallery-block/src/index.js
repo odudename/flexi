@@ -36,7 +36,7 @@ registerBlockType("create-block/flexi-gallery-block", {
 		},
 		filter: {
 			type: "string",
-			default: "none",
+			default: "",
 		},
 		orderby: {
 			type: "string",
@@ -177,7 +177,7 @@ registerBlockType("create-block/flexi-gallery-block", {
 								label="Filter gallery contains"
 								value={attributes.filter}
 								options={[
-									{ label: "Show All", value: "none" },
+									{ label: "Show All", value: "" },
 									{ label: "Image", value: "image" },
 									{ label: "Video URL", value: "url" },
 									{ label: "Audio File", value: "audio" },

@@ -67,7 +67,7 @@ const Edit = ( { attributes, setAttributes } ) => {
                         label={ __( 'Filter By', 'flexi-gallery-block' ) }
                         value={ attributes.filter }
                         options={ [
-                            { label: 'None', value: 'none' },
+                            { label: 'None', value: '' },
                             { label: 'Category', value: 'category' },
                             { label: 'Tag', value: 'tag' },
                         ] }

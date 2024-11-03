@@ -23,7 +23,7 @@
 		},
 		"filter": {
 			"type": "string",
-			"default": "none"
+			"default": ""
 		},
 		"orderby": {
 			"type": "string",
