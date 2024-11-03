@@ -3,7 +3,7 @@ import { InspectorControls, useBlockProps } from "@wordpress/block-editor";
 import ServerSideRender from "@wordpress/server-side-render";
 import { useSelect } from "@wordpress/data";
 import { Fragment } from "@wordpress/element";
-import { useEffect } from '@wordpress/element';
+import { useEffect } from "@wordpress/element";
 import {
 	PanelBody,
 	RangeControl,
@@ -124,41 +124,37 @@ registerBlockType("create-block/flexi-gallery-block", {
 		},
 	},
 	edit: ({ attributes, setAttributes }) => {
-		
-        
-        const categoriesList = useSelect(
-            (select) =>
-                select("core").getEntityRecords("taxonomy", "flexi_category", {
-                    per_page: -1,
-                }),
-            []
-        );
-    
-        // Build the category options array
-        const buildCategoryOptions = (categories) => {
-            const categoryOptions = [
-                { label: "-- Select All --", value: 0 }
-            ];
-    
-            if (categories && categories.length > 0) {
-                categories.forEach((category) => {
-                    categoryOptions.push({
-                        label: category.name,
-                        value: category.id,
-                    });
-                });
-            }
-    
-            return categoryOptions;
-        };
-    
-        const categories = buildCategoryOptions(categoriesList || []);
-    
-        // Debugging: Log categories when categoriesList updates
-        useEffect(() => {
-            console.log("Updated Categories:", categories);
-        }, [categoriesList]);
-    
+		const categoriesList = useSelect(
+			(select) =>
+				select("core").getEntityRecords("taxonomy", "flexi_category", {
+					per_page: -1,
+				}),
+			[],
+		);
+
+		// Build the category options array
+		const buildCategoryOptions = (categories) => {
+			const categoryOptions = [{ label: "-- Select All --", value: 0 }];
+
+			if (categories && categories.length > 0) {
+				categories.forEach((category) => {
+					categoryOptions.push({
+						label: category.name,
+						value: category.id,
+					});
+				});
+			}
+
+			return categoryOptions;
+		};
+
+		const categories = buildCategoryOptions(categoriesList || []);
+
+		// Debugging: Log categories when categoriesList updates
+		useEffect(() => {
+			console.log("Updated Categories:", categories);
+		}, [categoriesList]);
+
 		const blockProps = useBlockProps();
 
 		return (
@@ -166,12 +162,12 @@ registerBlockType("create-block/flexi-gallery-block", {
 				<div {...blockProps}>
 					<InspectorControls>
 						<PanelBody title="Gallery Settings">
-                        <SelectControl
-                label="Select Category"
-                value={attributes.cat}
-                options={categories}
-                onChange={(value) => setAttributes({ cat: Number(value) })}
-            />
+							<SelectControl
+								label="Select Category"
+								value={attributes.cat}
+								options={categories}
+								onChange={(value) => setAttributes({ cat: Number(value) })}
+							/>
 							<TextControl
 								label="Tag slug name separated by commas"
 								value={attributes.tag}
