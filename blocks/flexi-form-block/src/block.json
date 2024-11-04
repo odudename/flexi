@@ -9,99 +9,87 @@
 		"html": false
 	},
 	"attributes": {
-		"column": {
-			"type": "number",
-			"default": 3
+		"enable_ajax": {
+			"type": "boolean",
+			"default": true
+		},
+		"flexi_type": {
+			"type": "string",
+			"default": "image"
+		},
+		"form_class": {
+			"type": "string",
+			"default": "flexi_form_style"
+		},
+		"form_title": {
+			"type": "string",
+			"default": "My Form"
+		},
+		"title_label": {
+			"type": "string",
+			"default": "Title"
+		},
+		"title_placeholder": {
+			"type": "string",
+			"default": ""
+		},
+		"button_label": {
+			"type": "string",
+			"default": "Submit"
+		},
+		"category_label": {
+			"type": "string",
+			"default": "Select Category"
 		},
 		"cat": {
 			"type": "number",
 			"default": 0
 		},
-		"tag": {
+		"tag_label": {
+			"type": "string",
+			"default": "Insert Tag"
+		},
+		"desp_label": {
+			"type": "string",
+			"default": "Description"
+		},
+		"desp_placeholder": {
 			"type": "string",
 			"default": ""
 		},
-		"filter": {
+		"enable_tag": {
+			"type": "boolean",
+			"default": false
+		},
+		"enable_desp": {
+			"type": "boolean",
+			"default": false
+		},
+		"enable_category": {
+			"type": "boolean",
+			"default": false
+		},
+		"enable_file": {
+			"type": "boolean",
+			"default": false
+		},
+		"enable_bulk_file": {
+			"type": "boolean",
+			"default": false
+		},
+		"file_label": {
 			"type": "string",
-			"default": ""
+			"default": "Select File"
 		},
-		"orderby": {
+		"url_label": {
 			"type": "string",
-			"default": "date"
+			"default": "Insert oEmbed URL"
 		},
-		"layout": {
-			"type": "string",
-			"default": "masonry"
-		},
-		"popup_style": {
-			"type": "string",
-			"default": "on"
-		},
-		"perpage": {
-			"type": "number",
-			"default": 10
-		},
-		"padding": {
-			"type": "number",
-			"default": 5
-		},
-		"hover_effect": {
-			"type": "string",
-			"default": ""
-		},
-		"hover_caption": {
-			"type": "string",
-			"default": "flexi_caption_none"
-		},
-		"evalue_title": {
+		"enable_url": {
 			"type": "boolean",
 			"default": false
 		},
-		"evalue_excerpt": {
-			"type": "boolean",
-			"default": false
-		},
-		"evalue_category": {
-			"type": "boolean",
-			"default": false
-		},
-		"evalue_tag": {
-			"type": "boolean",
-			"default": false
-		},
-		"evalue_count": {
-			"type": "boolean",
-			"default": false
-		},
-		"evalue_like": {
-			"type": "boolean",
-			"default": false
-		},
-		"evalue_unlike": {
-			"type": "boolean",
-			"default": false
-		},
-		"at_sidebar": {
-			"type": "boolean",
-			"default": true
-		},
-		"evalue_icon": {
-			"type": "boolean",
-			"default": true
-		},
-		"evalue_custom": {
-			"type": "boolean",
-			"default": false
-		},
-		"width": {
-			"type": "number",
-			"default": 150
-		},
-		"height": {
-			"type": "number",
-			"default": 150
-		},
-		"tag_show": {
+		"enable_security": {
 			"type": "boolean",
 			"default": false
 		}
