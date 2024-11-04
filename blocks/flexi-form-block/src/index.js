@@ -12,12 +12,12 @@ import {
 	TextControl,
 } from "@wordpress/components";
 
-registerBlockType("create-block/flexi-gallery-block", {
+registerBlockType("create-block/flexi-form-block", {
 	apiVersion: 2,
-	title: "Flexi Gallery Block",
+	title: "Flexi Form Block",
 	category: "media",
 	icon: "format-gallery",
-	description: "A FLEXI Gallery block with various settings.",
+	description: "A form for Flexi gallery block with various settings.",
 	supports: {
 		html: false,
 	},

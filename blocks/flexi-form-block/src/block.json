@@ -1,10 +1,10 @@
 {
 	"apiVersion": 2,
-	"name": "create-block/flexi-gallery-block",
-	"title": "Flexi Gallery Block",
+	"name": "create-block/flexi-form-block",
+	"title": "Flexi Form Block",
 	"category": "media",
 	"icon": "format-gallery",
-	"description": "A FLEXI gallery block with various settings.",
+	"description": "A FLEXI Form block with various settings.",
 	"supports": {
 		"html": false
 	},

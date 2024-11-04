@@ -1,7 +1,7 @@
 {
-	"name": "flexi-gallery-block",
+	"name": "flexi-form-block",
 	"version": "0.1.0",
-	"description": "Flexi Gallery Block",
+	"description": "Flexi Form Block",
 	"author": "odude",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

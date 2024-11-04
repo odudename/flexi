@@ -120,7 +120,7 @@ class Flexi
         //Block
         //require_once plugin_dir_path(dirname(__FILE__)) . 'block/plugin.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'blocks/flexi-gallery-block/flexi-gallery-block.php';
-
+        require_once plugin_dir_path(dirname(__FILE__)) . 'blocks/flexi-form-block/flexi-form-block.php';
 
         //Widgets
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/widgets/categories.php';
