@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Like/Unlike button on gallery page
  *
@@ -86,7 +87,7 @@ class flexi_like
 
         $toggle = flexi_evalue_toggle('like', $evalue);
 
-        if (($enable == 1)) {
+        if (($enable == 1 && $toggle == "")) {
             $extra_icon = array();
             $nonce = wp_create_nonce('flexi_ajax_like');
             if ($layout == 'portfolio') {
@@ -129,7 +130,7 @@ class flexi_like
         $toggle = flexi_evalue_toggle('unlike', $evalue);
         // flexi_log($toggle);
 
-        if (($enable == 1)) {
+        if (($enable == 1 && $toggle == "")) {
             $extra_icon = array();
             $nonce = wp_create_nonce('flexi_ajax_like');
             if ($layout == 'portfolio') {

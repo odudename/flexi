@@ -24,11 +24,6 @@ const Edit = ( { attributes, setAttributes } ) => {
                         max={ 20 }
                     />
                     <ToggleControl
-                        label={ __( 'Enable Popup', 'flexi-gallery-block' ) }
-                        checked={ attributes.popup }
-                        onChange={ ( popup ) => setAttributes( { popup } ) }
-                    />
-                    <ToggleControl
                         label={ __( 'Show Title', 'flexi-gallery-block' ) }
                         checked={ attributes.evalue_title }
                         onChange={ ( evalue_title ) => setAttributes( { evalue_title } ) }

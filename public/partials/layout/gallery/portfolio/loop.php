@@ -41,9 +41,9 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
             //Display excerpt
             if (flexi_evalue_toggle('excerpt', $evalue) != 'display:none') {
             ?>
-            <div class="fl-content fl-mb-1 fl-is-size-6 <?php echo esc_attr($style_text_color); ?>">
-                <?php echo wpautop(wp_kses_post(flexi_excerpt(20))); ?>
-            </div>
+                <div class="fl-content fl-mb-1 fl-is-size-6 <?php echo esc_attr($style_text_color); ?>">
+                    <?php echo wpautop(wp_kses_post(flexi_excerpt(20))); ?>
+                </div>
             <?php
             }
             ?>
@@ -120,7 +120,6 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
 
         </div>
         <?php echo wp_kses_post(flexi_show_addon_gallery($evalue, get_the_ID(), 'portfolio')); ?>
-
     </div>
 
     <!-- Loop End -->

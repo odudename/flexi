@@ -58,10 +58,6 @@ registerBlockType("create-block/flexi-gallery-block", {
 			type: "number",
 			default: 5,
 		},
-		popup: {
-			type: "boolean",
-			default: false,
-		},
 		hover_effect: {
 			type: "string",
 			default: "",
@@ -218,6 +214,7 @@ registerBlockType("create-block/flexi-gallery-block", {
 									{ label: "Regular", value: "on" },
 									{ label: "Simple", value: "simple" },
 									{ label: "Custom", value: "custom" },
+                                    { label: "Off", value: "off" },
 								]}
 								onChange={(popup_style) => setAttributes({ popup_style })}
 							/>
@@ -251,11 +248,6 @@ registerBlockType("create-block/flexi-gallery-block", {
 							/>
 						</PanelBody>
 						<PanelBody title="Toggle Controls">
-							<ToggleControl
-								label="Enable Popup Lightbox"
-								checked={attributes.popup}
-								onChange={(popup) => setAttributes({ popup })}
-							/>
 							<ToggleControl
 								label="Display Title"
 								checked={attributes.evalue_title}
@@ -294,9 +286,14 @@ registerBlockType("create-block/flexi-gallery-block", {
 								onChange={(evalue_unlike) => setAttributes({ evalue_unlike })}
 							/>
 							<ToggleControl
-								label="Show Tags"
+								label="Show Tags...."
 								checked={attributes.tag_show}
 								onChange={(tag_show) => setAttributes({ tag_show })}
+							/>
+                            	<ToggleControl
+								label="Show Icon Grid"
+								checked={attributes.evalue_icon}
+								onChange={(evalue_icon) => setAttributes({ evalue_icon })}
 							/>
 						</PanelBody>
 					</InspectorControls>
