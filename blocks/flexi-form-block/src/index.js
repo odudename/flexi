@@ -249,6 +249,84 @@ registerBlockType("create-block/flexi-form-block", {
 							/>
 							)}
 						</PanelBody>
+						<PanelBody title={__("Tag Field", "flexi")} initialOpen={false}>
+							<ToggleControl
+								label="Enable Tag"
+								checked={attributes.enable_tag}
+								onChange={(enable_tag) => setAttributes({ enable_tag })}
+							/>
+							{attributes.enable_tag && (
+								<TextControl
+									label="Tag Title"
+									value={attributes.tag_label}
+									onChange={(tag_label) => setAttributes({ tag_label })}
+								/>
+							)}
+						</PanelBody>
+						{attributes.flexi_type == "image" && (
+							<PanelBody
+								title={__("Image Upload Field", "flexi")}
+								initialOpen={false}
+							>
+								<ToggleControl
+									label="Enable Image Upload"
+									checked={attributes.enable_file}
+									onChange={(enable_file) => setAttributes({ enable_file })}
+								/>
+								{attributes.enable_file && (
+									<ToggleControl
+										label="Enable Bulk File Upload"
+										checked={attributes.enable_bulk_file}
+										onChange={(enable_bulk_file) => setAttributes({ enable_bulk_file })}
+									/>
+								)}
+								{attributes.enable_file && (
+									<TextControl
+										label="Upload Title"
+										value={attributes.file_label}
+										onChange={(file_label) => setAttributes({ file_label })}
+									/>
+								)}
+							</PanelBody>
+							
+						)}
+						{attributes.flexi_type == "url" && (
+							<PanelBody
+								title={__("URL Submit Field", "flexi")}
+								initialOpen={false}
+							>
+								<ToggleControl
+									label="Enable oEmbed URL"
+									checked={attributes.enable_url}
+									onChange={(enable_url) => setAttributes({ enable_url })}
+								/>
+								{attributes.enable_url && (
+									<TextControl
+										label="URL Field Title"
+										value={attributes.url_label}
+										onChange={(url_label) => setAttributes({ url_label })}
+									/>
+								)}
+							</PanelBody>
+						)}
+						<PanelBody
+							title={__("Security reCaptcha Field", "flexi")}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label="Enable Google reCaptcha"
+								checked={attributes.enable_security}
+								onChange={(enable_security) => setAttributes({ enable_security })}
+							/>
+						</PanelBody>
+						<PanelBody title={__("Submit Button", "flexi")} initialOpen={false}>
+							<TextControl
+								label="Label of Submit Button"
+								value={attributes.button_label}
+								onChange={(button_label) => setAttributes({ button_label })}
+							/>
+						</PanelBody>
+
                 </InspectorControls>
 
 					<ServerSideRender
