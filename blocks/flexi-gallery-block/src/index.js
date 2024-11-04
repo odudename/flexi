@@ -218,12 +218,73 @@ registerBlockType("create-block/flexi-gallery-block", {
 								]}
 								onChange={(popup_style) => setAttributes({ popup_style })}
 							/>
+							<SelectControl
+									label="Image Hover Effect"
+									value={attributes.hover_effect}
+									options={[
+										{
+											label: "-- None --",
+											value: "",
+										},
+										{
+											label: "Blur",
+											value: "flexi_effect_1",
+										},
+										{
+											label: "Grayscale",
+											value: "flexi_effect_2",
+										},
+										{
+											label: "Zoom",
+											value: "flexi_effect_3",
+										},
+									]}
+									onChange={(value) => setAttributes({ hover_effect: value })}
+								/>
+								<SelectControl
+									label="Image Hover Caption"
+									value={attributes.hover_caption}
+									options={[
+										{
+											label: "-- None --",
+											value: "flexi_caption_none",
+										},
+										{
+											label: "Slide Left",
+											value: "flexi_caption_1",
+										},
+										{
+											label: "Pull up with Info",
+											value: "flexi_caption_2",
+										},
+										{
+											label: "Slide Right with Info",
+											value: "flexi_caption_3",
+										},
+										{
+											label: "Pull Up",
+											value: "flexi_caption_4",
+										},
+										{
+											label: "Top & Bottom",
+											value: "flexi_caption_5",
+										},
+									]}
+									onChange={(value) => setAttributes({ hover_caption: value })}
+								/>
 							<RangeControl
 								label="Columns"
 								value={attributes.column}
 								onChange={(column) => setAttributes({ column })}
 								min={1}
 								max={5}
+							/>
+									<RangeControl
+								label="Padding"
+								value={attributes.padding}
+								onChange={(padding) => setAttributes({ padding })}
+								min={1}
+								max={10}
 							/>
 							<RangeControl
 								label="Posts Per Page"

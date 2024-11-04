@@ -37,7 +37,7 @@ add_action('init', 'create_block_flexi_gallery_block_block_init');
 function render_flexi_gallery_block($attributes)
 {
 	// Setting default values for all attributes
-	$columns = isset($attributes['columns']) ? $attributes['columns'] : 3;
+	$column = isset($attributes['column']) ? $attributes['column'] : 3;
 	$lightbox_enabled = isset($attributes['lightboxEnabled']) && $attributes['lightboxEnabled'] ? '1' : '0';
 	$show_captions = isset($attributes['showCaptions']) && $attributes['showCaptions'] ? '1' : '0';
 	$animation_style = isset($attributes['animationStyle']) ? $attributes['animationStyle'] : 'fade';
@@ -79,7 +79,7 @@ function render_flexi_gallery_block($attributes)
 	// Build the shortcode with all attributes
 	$shortcode = 'flexi-gallery';
 	$shortcode .= ' ' . $at_sidebar;
-	$shortcode .= ' column="' . esc_attr($columns) . '"';
+	$shortcode .= ' column="' . esc_attr($column) . '"';
 	$shortcode .= ' perpage="' . esc_attr($perpage) . '"';
 	$shortcode .= ' padding="' . esc_attr($padding) . '"';
 	$shortcode .= ' layout="' . esc_attr($layout) . '"';
