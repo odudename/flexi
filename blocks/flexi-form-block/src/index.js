@@ -200,6 +200,55 @@ registerBlockType("create-block/flexi-form-block", {
 								onChange={(title_placeholder) => setAttributes({ title_placeholder })}
 							/>
 						</PanelBody>
+						<PanelBody
+							title={__("Description Field", "flexi")}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label="Enable Description"
+								checked={attributes.enable_desp}
+								onChange={(enable_desp) => setAttributes({ enable_desp })}
+							/>
+							{attributes.enable_desp && (
+								<TextControl
+									label="Description Title"
+									value={attributes.desp_label}
+									onChange={(desp_label) => setAttributes({ desp_label })}
+								/>
+							)}
+							{attributes.enable_desp && (
+								<TextControl
+									label="Description Placeholder"
+									value={attributes.desp_placeholder}
+									onChange={(desp_placeholder) => setAttributes({ desp_placeholder })}
+								/>
+							)}
+						</PanelBody>
+						<PanelBody
+							title={__("Category Field", "flexi")}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label="Enable Category"
+								checked={attributes.enable_category}
+								onChange={(enable_category) => setAttributes({ enable_category })}
+							/>
+							{attributes.enable_category && (
+								<TextControl
+									label="Category Title"
+									value={attributes.category_label}
+									onChange={(category_label) => setAttributes({ category_label })}
+								/>
+							)}
+							{attributes.enable_category && (
+								<SelectControl
+								label="Select ParentCategory"
+								value={attributes.cat}
+								options={categories}
+								onChange={(value) => setAttributes({ cat: Number(value) })}
+							/>
+							)}
+						</PanelBody>
                 </InspectorControls>
 
 					<ServerSideRender
