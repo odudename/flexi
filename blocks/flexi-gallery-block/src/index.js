@@ -15,7 +15,7 @@ import {
 registerBlockType("create-block/flexi-gallery-block", {
 	apiVersion: 2,
 	title: "Flexi Gallery Block",
-	category: "media",
+	category: "flexi",
 	icon: "format-gallery",
 	description: "A FLEXI Gallery block with various settings.",
 	supports: {

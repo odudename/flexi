@@ -16,7 +16,7 @@ import {
 registerBlockType("create-block/flexi-form-block", {
 	apiVersion: 2,
 	title: "Flexi Form Block",
-	category: "media",
+	category: "flexi",
 	icon: "format-gallery",
 	description: "A form for Flexi gallery block with various settings.",
 	supports: {

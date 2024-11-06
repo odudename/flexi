@@ -33,6 +33,26 @@ function create_block_flexi_gallery_block_block_init()
 }
 add_action('init', 'create_block_flexi_gallery_block_block_init');
 
+function flexi_block_categories($categories, $post)
+{
+	/*
+if ('post' !== $post->post_type) {
+return $categories;
+}
+ */
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug'  => 'flexi',
+				'title' => __('Flexi Plugin', 'flexi'),
+				'icon'  => 'playlist-video',
+			),
+		)
+	);
+}
+add_filter('block_categories_all', 'flexi_block_categories', 10, 2);
+
 
 function render_flexi_gallery_block($attributes)
 {
