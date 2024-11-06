@@ -42,7 +42,7 @@ class Flexi_Admin_Dashboard_Pro
 
 ?>
 
-<div style="text-align:right;"> <a href="https://odude.com/product-category/flexi/"
+<div style="text-align:right;"> <a href="https://odude.com/flexi/product-category/flexi/"
         class="button-secondary">Purchase/Renew Flexi-PRO</a> </div>
 
 <div class="card">

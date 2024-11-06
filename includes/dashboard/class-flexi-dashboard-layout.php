@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Import external layouts created specially for Flexi
  *
@@ -79,7 +80,6 @@ class Flexi_Admin_Dashboard_Layout
                 rmdir($dir);
             }
         }
-
     }
 
     //Upload .zip file
@@ -194,10 +194,10 @@ class Flexi_Admin_Dashboard_Layout
             }
         }
 
-        ?>
+?>
 
-<div style="text-align:right;"> <a href="https://flexi.odude.com/layout/" class="button-secondary">More FREE/PAID
-        Gallery</a> </div>
+<div style="text-align:right;"> <a href="#" class="button-secondary">More FREE/PAID
+        Gallery Soon...</a> </div>
 
 <h3>Gallery Layouts</h3>
 <div class="about-text card">
@@ -214,22 +214,22 @@ class Flexi_Admin_Dashboard_Layout
 <div class="theme-browser rendered">
     <div class="themes wp-clearfix">
         <?php
-$output = "";
-        $folder = "gallery";
-        $dir = FLEXI_BASE_DIR . 'public/partials/layout/' . $folder . '/';
-        $files = array_map("htmlspecialchars", scandir($dir));
-        foreach ($files as $file) {
-            if (!strpos($file, '.') && "." != $file && ".." != $file) {
-                $style_path = FLEXI_BASE_DIR . 'public/partials/layout/' . $folder . '/' . $file . '/style.css';
-                $version = $this->get_layout_info($style_path, 'version');
-                $url = $this->get_layout_info($style_path, 'url');
-                $screenshot = FLEXI_BASE_DIR . 'public/partials/layout/' . $folder . '/' . $file . '/screenshot.png';
-                if (file_exists($screenshot)) {
-                    $screenshot = FLEXI_ROOT_URL . 'public/partials/layout/' . $folder . '/' . $file . '/screenshot.png';
-                } else {
+                $output = "";
+                $folder = "gallery";
+                $dir = FLEXI_BASE_DIR . 'public/partials/layout/' . $folder . '/';
+                $files = array_map("htmlspecialchars", scandir($dir));
+                foreach ($files as $file) {
+                    if (!strpos($file, '.') && "." != $file && ".." != $file) {
+                        $style_path = FLEXI_BASE_DIR . 'public/partials/layout/' . $folder . '/' . $file . '/style.css';
+                        $version = $this->get_layout_info($style_path, 'version');
+                        $url = $this->get_layout_info($style_path, 'url');
+                        $screenshot = FLEXI_BASE_DIR . 'public/partials/layout/' . $folder . '/' . $file . '/screenshot.png';
+                        if (file_exists($screenshot)) {
+                            $screenshot = FLEXI_ROOT_URL . 'public/partials/layout/' . $folder . '/' . $file . '/screenshot.png';
+                        } else {
 
-                    $screenshot = FLEXI_ROOT_URL . 'admin/img/screenshot.png';
-                }
+                            $screenshot = FLEXI_ROOT_URL . 'admin/img/screenshot.png';
+                        }
                 ?>
         <div class="theme active" tabindex="0" aria-describedby="dukan-lite-action dukan-lite-name"
             data-slug="dukan-lite">
@@ -248,23 +248,23 @@ $output = "";
                 </h2>
                 <?php
 
-                if (!in_array($file, $safe_layout)) {
-                    ?>
+                                if (!in_array($file, $safe_layout)) {
+                                ?>
                 <div class="theme-actions">
                     <?php
-$layout_page = add_query_arg('delete', trim($file), $layout_page);
-                    ?>
+                                        $layout_page = add_query_arg('delete', trim($file), $layout_page);
+                                        ?>
                     <a class="button button-primary customize load-customize hide-if-no-customize"
                         href="<?php echo esc_url_raw($layout_page); ?>">Delete</a>
                 </div>
-                <?php }?>
+                <?php } ?>
             </div>
         </div>
 
         <?php
-}
-        }
-        ?>
+                    }
+                }
+                ?>
     </div>
 </div>
 
@@ -273,7 +273,7 @@ $layout_page = add_query_arg('delete', trim($file), $layout_page);
 
 
 <?php
-$content = ob_get_clean();
+        $content = ob_get_clean();
         return $content;
     }
     public function get_layout_info($css, $key)
@@ -292,7 +292,6 @@ $content = ob_get_clean();
                 } else {
                     $linea .= '';
                 }
-
             }
         }
 

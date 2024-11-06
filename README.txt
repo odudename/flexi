@@ -5,7 +5,7 @@ Tags: gallery, photo gallery, image gallery, video gallery, Frontend, visitor
 Requires at least: 5.0.0
 Requires PHP: 5.5
 Tested up to: 6.6.2
-Stable tag: 4.27
+Stable tag: 4.28
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,7 +189,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 
 == Changelog ==
 
-= 4.27 =
+= 4.28 =
 * Block editor recreated supporting latest version of wordpress. 
 
 
